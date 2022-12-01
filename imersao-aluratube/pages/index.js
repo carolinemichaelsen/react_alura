@@ -19,7 +19,9 @@ function HomePage() {
     }}>
       <Menu />
       <Header />
-      <Timeline playlists={config.playlists} />
+      <Timeline playlists={config.playlists}>
+        Conteúdo
+      </Timeline>
     </div>
     </>
   );
@@ -60,11 +62,11 @@ function Header() {
 }
 
 function Timeline(props) {
-  const playlistsNames = Object.keys(props.playlists);
+  const playlistNames = Object.keys(props.playlists);
 
   return (
     <StyledTimeline>
-      {playlistsNames.map((playlistName) => {
+      {playlistNames.map((playlistName) => {
         const videos = props.playlists[playlistName];
         console.log(playlistName);
         console.log(videos);
